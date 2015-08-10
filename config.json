@@ -1,0 +1,21 @@
+{
+    "language"        : "PYTHON",
+    "main-file"       : "spearmint-tuner.py",
+    "experiment-name" : "any-name-should-be-ok",
+    "likelihood"      : "NOISELESS",
+    "variables" : {
+        "learning_rate" : {
+            "type" : "FLOAT",
+            "size" : 1,
+            "min"  : 1e-7,
+            "max"  : 5e-5
+        },
+        "reg" : {
+            "type" : "FLOAT",
+            "size" : 1,
+            "min"  : 5e4,
+            "max"  : 1e8
+        }
+    }
+}
+
