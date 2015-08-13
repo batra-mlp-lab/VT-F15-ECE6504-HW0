@@ -23,6 +23,7 @@ The ipython notebook files have .ipynb extension which you should be able to ope
 
 #### Starting homework 0:
 This homework is a warm up for the rest of the course. As part of this homework you will be coding two classifiers: Support Vector Machine (SVM) and logistic regression. You will train these to classify images in the [CIFAR-10 dataset](http://www.cs.toronto.edu/~kriz/cifar.html). The CIFAR-10 is a toy dataset with 60000 images of size 32 X 32, belonging to 10 classes. You need to start with svm.ipynb first to implement the SVM and then go ahead with Softmax.ipynb to implement logistic regression. 
+This homework is based on [assignment 1](http://cs231n.github.io/assignment1/) of the cs231n course at Stanford. 
 
 ##### Getting the dataset
 Make sure you are on the internet and navigate to hw0/f15ece6504/data in the hw0 folder. Run:
