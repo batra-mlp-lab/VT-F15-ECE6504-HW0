@@ -41,4 +41,34 @@ If you have anaconda installed, setting up spearmint should be pretty straightfo
 ##### SVM and Logistic Regression
 As you might already know, SVM and logistic regression clasisfiers are very similar except that they calculate the loss differently. Here is a brief summary of the classifiers and if you need a detailed tutorial to brush up your knowledge, [this](http://cs231n.github.io/linear-classify/) is a nice place!
 
-![](http://i.imgur.com/yM0wR4C.png)
+Before we go into the details of a classifier, let us assume that our training dataset has $ x_i \in \R^D $ instances of dimensionality $D$. Corresponding to each of the training instances we have labels $y_i \in [1,K]$, where $K$ is the number of classes. In this homework, we are using the CIFAR-10 database where $N=50,000$, $K=10$, $D= 32 \times 32 \times 3$ (image of size (32,32) with three channels - Red, Green and Blue). 
+Classification is the task of assigning a label to the input from a fixed set of categories or classes. A classifier consists of two important components:
+1. Score function: This maps every input $x_i$ to a vector $p$ of dimensionality $K$. Each of these entries represent the class scores for that image. Both SVM and Logistic Regression have a linear score function given by:
+$$
+p_i = f(x_i;W,b)
+$$
+where, 
+$$ 
+f(x;W,b) = Wx + b
+$$
+Here, W is a matrix of weights of dimensionality $K \times D$ and b is a vector of bias terms of dimensionality $K$. The process of training is to find the appropriate values for W and b such that the score corresponding to the correct class is high. In order to do this, we need a function that evaluates the performance. Using this evaluation as feedback, the weigts can be updated in the right 'direction' to improve the performance of the classifier. 
+
+We make a minor modification to the notation before proceeding. The bias term can be incorporated within the weight matrix W making it of dimensionality $K \times D+1$. The $i^{th}$ row of the weight matrix W is used as a column vector $w_i$ so that the $p_i^j = w_j^Tx_i$. The superscript j denotes the $j^th$ element of the score vector $p$. 
+
+2. Loss function: This function quantifies the correspondence between the predicted scores and ground truth labels. 
+The loss of the SVM is given by:
+$$
+L = \frac{1}{N}\sum_{i=1}^{N}\sum{j\neq y_i}max(0,w_j^Tx_i - w_{y_i}^Tx_i + \Delta)
+$$
+Here, \Delta is the margin. The loss function penalises when the correct class is not greater than all the other scores by atleast \Delta.
+
+The loss of the Logistic Regression is given by:
+$$
+L = -\frac{1}{N}\sum{i=1}^{N}\log \bigg( \frac{e^{p_i^{y_i}}{\sum_j e^{p^j_i}} \bigg)
+$$ 
+
+
+
+
+A classifier has two important components:
+1. Score Function: 
