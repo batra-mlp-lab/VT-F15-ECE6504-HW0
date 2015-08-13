@@ -1,3 +1,5 @@
+# [ECE 6504 Deep Learning for Perception](https://filebox.ece.vt.edu/~f15ece6504/)
+
 ### Getting Started with ECE6504 
 
 In this course, we will be using python considerably (most assignments will need a good amount of python). 
