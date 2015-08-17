@@ -27,7 +27,7 @@ If you are new to python and have sufficient programming experience in using lan
 We will be using the [Numpy](http://www.numpy.org/) package extensively as it is the fundamental package for scientific computing providing support for array operations, linear algebra, etc. A good tutorial to get you started is [here](http://cs231n.github.io/python-numpy-tutorial/). For those comfortable with the operations of MATLAB, [this](http://sebastianraschka.com/Articles/2014_matlab_vs_numpy.html) might prove useful. 
 
 For some assignments, we will be using the [ipython notebook](http://ipython.org/notebook.html). Ipython is a command shell for interactive computing developed primarily for python. The notebook is a useful environment where text can be embedded with code enabling us to set a flow while you do the assignments. 
-If you have installed Anaconda and made it your default python, you should be able to start the ipython notebook envirnoment with:
+If you have installed Anaconda and made it your default python, you should be able to start the ipython notebook environment with:
 
 **TODO**
 
