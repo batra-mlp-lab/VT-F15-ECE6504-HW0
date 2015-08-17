@@ -4,8 +4,15 @@ from random import shuffle
 def svm_loss_vectorized(W, X, y, reg):
   """
   Structured SVM loss function, vectorized implementation.
-
-  Inputs and outputs are the same as svm_loss_naive.
+  Inputs:
+  - W: K x D array of weights
+  - X: D x N array of data. Data are D-dimensional columns
+  - y: 1-dimensional array of length N with labels 0...K-1, for K classes
+  - reg: (float) regularization strength
+  Returns:
+  a tuple of:
+  - loss as single float
+  - gradient with respect to weights W; an array of same shape as W
   """
   loss = 0.0
   dW = np.zeros(W.shape) # initialize the gradient as zero
@@ -19,7 +26,7 @@ def svm_loss_vectorized(W, X, y, reg):
   #############################################################################
   #                             END OF YOUR CODE                              #
   #############################################################################
-
+  pass
 
   #############################################################################
   # TODO:                                                                     #
@@ -30,7 +37,7 @@ def svm_loss_vectorized(W, X, y, reg):
   # to reuse some of the intermediate values that you used to compute the     #
   # loss.                                                                     #
   #############################################################################
-  pass  
+  
   #############################################################################
   #                             END OF YOUR CODE                              #
   #############################################################################

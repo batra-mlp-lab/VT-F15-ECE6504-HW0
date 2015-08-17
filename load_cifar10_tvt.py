@@ -4,10 +4,10 @@
 
 import numpy as np
 import random
-from cs231n.get_cifar10 import load_CIFAR10
+from f15ece6504.get_cifar10 import load_CIFAR10
 
 def load_cifar10_train_val():
-	cifar10_dir = 'cs231n/datasets/cifar-10-batches-py'
+	cifar10_dir = 'f15ece6504/data/cifar-10-batches-py'
 	X_train, y_train, X_test, y_test = load_CIFAR10(cifar10_dir)
 
 	# load the data - just like we did before with SVM

@@ -1,13 +1,10 @@
----
-layout:     page
-title:      Homework 0
-permalink:  /homework0/
----
+# [ECE 6504 Deep Learning for Perception](https://filebox.ece.vt.edu/~f15ece6504/)
 
-### Getting Started with ECE6504 
+## Part-1: Getting Started with ECE6504 
 
 In this course, we will be using python considerably (most assignments will need a good amount of python). 
 
+### Anaconda
 Although many distributions of python are available, we recommend that you use the [Anconda Python](https://store.continuum.io/cshop/anaconda/). Here are the advantages of using Anaconda: 
 - Easy seamless install of [python packages](http://docs.continuum.io/anaconda/pkg-docs) (most come standard)
 - It does not need root access to install new packages 
@@ -22,7 +19,7 @@ Common issues are addressed here in the  [FAQ](http://docs.continuum.io/anaconda
 **TODO**
 Install Anaconda python. 
 
-#### Python 
+### Python 
 If you are comfortable with python, you can skip this section! 
 
 If you are new to python and have sufficient programming experience in using languages like C/C++, MATLAB, etc., you should be able to grasp the basic workings of python necessary for this course easily. 
@@ -37,32 +34,34 @@ If you have installed Anaconda and made it your default python, you should be ab
 ```sh
 \ ipython notebook
 ```
-The ipython notebook files have .ipynb extension which you should be able to open now by navigating to the right directory. 
+The ipython notebook files have `.ipynb` extension which you should be able to open now by navigating to the right directory. 
 
-#### Starting homework 0:
-This homework is a warm up for the rest of the course. As part of this homework you will be coding two classifiers: Support Vector Machine (SVM) and logistic regression. You will train these to classify images in the [CIFAR-10 dataset](http://www.cs.toronto.edu/~kriz/cifar.html). The CIFAR-10 is a toy dataset with 60000 images of size 32 X 32, belonging to 10 classes. You need to start with svm.ipynb first to implement the SVM and then go ahead with Softmax.ipynb to implement logistic regression. 
+## Part-2: Starting homework 0:
+This homework is a warm up for the rest of the course. As part of this homework you will be coding two classifiers: Multi-Class Support Vector Machine (SVM) and Softmax regression (SR). You will train these to classify images in the [CIFAR-10 dataset](http://www.cs.toronto.edu/~kriz/cifar.html). The CIFAR-10 is a toy dataset with 60000 images of size 32 X 32, belonging to 10 classes. You need to start with svm.ipynb first to implement the SVM and then go ahead with Softmax.ipynb to implement logistic regression. 
+
 This homework is based on [assignment 1](http://cs231n.github.io/assignment1/) of the cs231n course at Stanford. 
 
-##### Getting the dataset
-Make sure you are on the internet and navigate to hw0/f15ece6504/data in the hw0 folder. Run:
+### Getting the dataset
+Make sure you are on the internet and navigate to `hw0/f15ece6504/data` in the hw0 folder. 
+**TODO**
 ```sh
 ./get_datasets.sh
 ```
-This script will download the python version of the database for you and put it in hw0/f15ece6504/data/cifar-10-batches.py folder. 
+This script will download the python version of the database for you and put it in `hw0/f15ece6504/data/cifar-10-batches.py` folder. 
 
-##### Getting Spearmint
+### Getting Spearmint
 As part of this homework, you will be using spearmint to tune the hyper-parameters like learning rate, regularization strength, etc. Spearmint is a software package to perform Bayesian optimization. It is designed to automatically run experiments in a manner that iteratively adjusts a number of parameters so as to minimize some objective in as few runs as possible. 
 
-If you have Anaconda installed, setting up spearmint should be pretty straightforward. You can find installation and usage instructions [here](https://github.com/HIPS/Spearmint). You need to use the command line interface to work with spearmint. You can look up the ../examples/branin/ to get an idea. 
+If you have Anaconda installed, setting up spearmint should be pretty straightforward. You can find installation and usage instructions [here](https://github.com/HIPS/Spearmint). You need to use the command line interface to work with spearmint. To get an idea of how spearmint works, look up the [examples](https://github.com/HIPS/Spearmint/tree/master/examples/simple) provided in the `Spearmint/examples` folder. 
 
 **TODO**
 Install spearmint. Follow instructions in the ipython notebook. 
 
 **Deliverables**
-run the collect_Submissions.sh script and upload the resulting zip file
+run the collectSubmission.sh script and upload the resulting zip file
 
-#### SVM and Logistic Regression
-As you might already know, SVM and Logistic Regression classifiers are both linear models but they use different loss functions (hinge loss in SVMs vs logistic loss in LR). Here is a brief summary of the classifiers and if you need a detailed tutorial to brush up your knowledge, [this](http://cs231n.github.io/linear-classify/) is a nice place.
+## Part-3: SVM and Logistic Regression
+As you might already know, both SVM and SR classifiers are linear models but they use different loss functions (hinge loss in SVMs vs softmax loss in SR). Here is a brief summary of the classifiers and if you need a detailed tutorial to brush up your knowledge, [this](http://cs231n.github.io/linear-classify/) is a nice place.
 
 Before we go into the details of a classifier, let us assume that our training dataset consists of instances \\(x\_i \in \mathbb{R}^D \\) of dimensionality \\(D\\). Corresponding to each of the training instances 
 we have labels \\(y\_i \in \{1,2,\dotsc ,K \}\\), where \\(K\\) is the number of classes. In this homework, we are using the CIFAR-10 database where \\(N=50,000\\), \\(K=10\\), \\(D= 32 \times 32 \times 3\\) (image of size  \\(32 \times 32\\) with \\(3\\) channels - Red, Green and Blue). 
@@ -103,4 +102,15 @@ The next step is to update the weight parts such that the loss is minimized. Thi
 
 Here, \\(\nabla L\\) is the gradient of the loss function and the factor \\(eta\\) is the learning rate. SGD is usually performed by computing the gradient w.r.t. a randomly selected batch from the training set.
 This method is more efficient than computing the gradient w.r.t the whole training set before each update is performed. 
+
+## Part-4 
+
+References:
+
+1. [CS231n Convolutional Neural Networks for Visual Recognition](cs231n.stanford.edu)
+
+---
+
+&#169; 2015 Virginia Tech
+
 
