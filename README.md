@@ -44,9 +44,24 @@ The IPython notebook files have `.ipynb` extension which you should be able to o
 
 ### Part 2: Starting homework 0
 
-This homework is a warm up for the rest of the course. As part of this homework you will be coding two classifiers: Multi-Class Support Vector Machine (SVM) and Softmax Regression (SR). You will train these to classify images in the [CIFAR-10 dataset](http://www.cs.toronto.edu/~kriz/cifar.html). The CIFAR-10 is a toy dataset with 60000 images of size 32 X 32, belonging to 10 classes. You need to start with `svm.ipynb` first to implement the SVM and then go ahead with `softmax.ipynb` to implement logistic regression.
+This homework is a warm up for the rest of the course. As part of this homework you will:
+
+- Implement a Multi-Class Support Vector Machine (SVM)
+    - vectorized loss function **4 points**
+    - vectorized gradient computation **4 points**
+- Implement Softmax Regression (SR)
+    - vectorized loss function **4 points**
+    - vectorized gradient computation **4 points**
+- Implement Stochastic Gradient Descent **2 points**
+- Tune the hyper parameters using Spearmint **2 points**
+
+You will train the classifiers on images in the [CIFAR-10 dataset](http://www.cs.toronto.edu/~kriz/cifar.html). The CIFAR-10 is a toy dataset with 60000 images of size 32 X 32, belonging to 10 classes. You need to start with `svm.ipynb` first to implement the SVM and then go ahead with `softmax.ipynb` to implement logistic regression.
 
 This homework is based on [assignment 1](http://cs231n.github.io/assignment1/) of the CS231n course at Stanford.
+
+**TODO**
+
+Download the starter code [here](https://github.com/batra-mlp-lab/VT-F15-ECE6504-HW0/archive/1.0.zip).
 
 #### Getting the dataset
 
@@ -98,9 +113,9 @@ We make a minor modification to the notation before proceeding further. The bias
 **Loss function:** This function quantifies the correspondence between the predicted scores and ground truth labels.
 The loss of the SVM is given by:
 
-\\[ L = \frac{1}{N}\sum\_{i=1}^{N}\sum\_{j \neq y\_i} \bigg[max \big(0, p\_i^j - p\_i^{y\_i} + \Delta \big) \bigg] \\]
+\\[ L = \frac{1}{N}\sum\_{i=1}^{N}\sum\_{j \neq y\_i} \bigg[\max \big(0, p\_i^j - p\_i^{y\_i} + \Delta \big) \bigg] \\]
 
-Here, \\(Delta\\) is the margin. The loss function penalizes when the correct class is not greater than all the other scores by atleast \\(Delta\\).
+Here, \\(\Delta\\) is the margin. The loss function penalizes when the correct class is not greater than all the other scores by at least \\(\Delta\\).
 The loss of the Logistic Regression is given by:
 
 \\[ L = - \frac{1}{N}\sum\_{i=1}^{N}\log \bigg( \frac{e^{p\_i^{y\_i}}}{\sum\_j e^{p^j\_i}} \bigg) \\]
@@ -109,13 +124,13 @@ If the weights are allowed to take values as high as possible, the model can ove
 
 \\[ R(W) = \sum\_{k}\sum\_{l}W\_{k,l}^2 \\]
 
-The regularization term \\(R(W)\\) is usually multiplied by the regularization strength \\(lambda\\) before adding it to the loss function. \\(lambda\\) is a hyper parameter which needs to be tuned so that the classifier generalizes well over the training set.
+The regularization term \\(R(W)\\) is usually multiplied by the regularization strength \\(\lambda\\) before adding it to the loss function. \\(\lambda\\) is a hyper parameter which needs to be tuned so that the classifier generalizes well over the training set.
 
 The next step is to update the weight parts such that the loss is minimized. This is done by Stochastic Gradient Descent (SGD). The weight update is done as:
 
 \\[ W := W - \eta \nabla L \\]
 
-Here, \\(\nabla L\\) is the gradient of the loss function and the factor \\(eta\\) is the learning rate. SGD is usually performed by computing the gradient w.r.t. a randomly selected batch from the training set.
+Here, \\(\nabla L\\) is the gradient of the loss function and the factor \\(\eta\\) is the learning rate. SGD is usually performed by computing the gradient w.r.t. a randomly selected batch from the training set.
 This method is more efficient than computing the gradient w.r.t the whole training set before each update is performed.
 
 References:
