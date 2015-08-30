@@ -73,7 +73,7 @@ Make sure you are connected to the internet. Navigate to the `f15ece6504/data` f
 ./get_datasets.sh
 ```
 
-This script will download the python version of the database for you and put it in `f15ece6504/data/cifar-10-batches-py` folder.
+This script will download the python version of the database for you and put it in `f15ece6504/data/cifar-10-batches.py` folder.
 
 #### Getting Spearmint
 
