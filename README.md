@@ -73,7 +73,7 @@ Make sure you are connected to the internet. Navigate to the `f15ece6504/data` f
 ./get_datasets.sh
 ```
 
-This script will download the python version of the database for you and put it in `f15ece6504/data/cifar-10-batches-py` folder.
+This script will download the python version of the database for you and put it in `f15ece6504/data/cifar-10-batches.py` folder.
 
 #### Getting Spearmint
 
@@ -93,8 +93,11 @@ Run the `collectSubmission.sh` script and upload the resulting zip file.
 
 As you might already know, both SVM and SR classifiers are linear models but they use different loss functions (hinge loss in SVMs vs softmax loss in SR). Here is a brief summary of the classifiers and if you need a detailed tutorial to brush up your knowledge, [this](http://cs231n.github.io/linear-classify/) is a nice place.
 
-Before we go into the details of a classifier, let us assume that our training dataset consists of instances \\(x\_i \in \mathbb{R}^D \\) of dimensionality \\(D\\). Corresponding to each of the training instances,
-we have labels \\(y\_i \in \{1,2,\dotsc ,K \}\\), where \\(K\\) is the number of classes. In this homework, we are using the CIFAR-10 database where \\(N=50,000\\), \\(K=10\\), \\(D= 32 \times 32 \times 3\\) (image of size  \\(32 \times 32\\) with \\(3\\) channels - Red, Green and Blue).
+Before we go into the details of a classifier, let us assume that our training dataset consists of \\(N\\) instances \\(x\_i \in \mathbb{R}^D \\) of dimensionality \\(D\\). 
+Corresponding to each of the training instances,
+we have labels \\(y\_i \in \{1,2,\dotsc ,K \}\\), where \\(K\\) is the number of classes. 
+In this homework, we are using the CIFAR-10 database where \\(N=50,000\\), \\(K=10\\), \\(D= 32 \times 32 \times 3\\) 
+(image of size  \\(32 \times 32\\) with \\(3\\) channels - Red, Green, and Blue).
 
 Classification is the task of assigning a label to the input from a fixed set of categories or classes. A classifier consists of two important components:
 
