@@ -61,7 +61,7 @@ This homework is based on [assignment 1](http://cs231n.github.io/assignment1/) o
 
 **TODO**
 
-Download the starter code [here](https://github.com/batra-mlp-lab/VT-F15-ECE6504-HW0/archive/1.3.zip).
+Download the starter code [here](https://github.com/batra-mlp-lab/VT-F15-ECE6504-HW0/archive/1.0.zip).
 
 #### Getting the dataset
 
@@ -143,5 +143,3 @@ References:
 ---
 
 &#169; 2015 Virginia Tech
-
-
